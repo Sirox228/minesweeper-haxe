@@ -7,6 +7,9 @@ import openfl.Lib;
 import openfl.events.UncaughtErrorEvent;
 import haxe.CallStack.StackItem;
 import haxe.CallStack;
+import sys.FileSystem;
+import sys.io.File;
+import flash.system.System;
 
 
 class Main extends Sprite
@@ -47,7 +50,7 @@ class Main extends Sprite
 					FileSystem.createDirectory('logs');
 
 				File.saveContent('logs/'
-					+ Application.current.meta.get('file')
+				        + Application.current.meta.get('file')
 					+ '-'
 					+ Date.now().toString().replace(' ', '-').replace(':', "'")
 					+ '.log',
