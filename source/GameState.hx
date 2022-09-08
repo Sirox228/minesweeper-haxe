@@ -129,8 +129,9 @@ class GameState extends FlxState
 			cells.set(i, element);
 		}
 		for (i in cells.keys()) {
-			i.x = i.width * (i.xpos - 1);
-			i.y = (i.height * (i.ypos - 1)) + 200;
+			var shit = cells.get(i);
+			shit.x = shit.width * (i.xpos - 1);
+			shit.y = (shit.height * (i.ypos - 1)) + 200;
 		}
 		smile = new Element(Std.int(FlxG.width / 2), 50, SMILE);
 		add(smile);
