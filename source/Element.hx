@@ -43,9 +43,9 @@ class Element extends FlxSprite
 				}
 				setAnim('nnull');
 		}
-		setGraphicSize(Std.int(width * 4), Std.int(height * 4));
 		offsetX = Std.int(width * 4);
 		offsetY = Std.int(height * 4);
+		setGraphicSize(Std.int(width * 4), Std.int(height * 4));
 	}
 	
 	public function setAnim(name:String) {
