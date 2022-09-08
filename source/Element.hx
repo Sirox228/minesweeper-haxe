@@ -36,7 +36,7 @@ class Element extends FlxSprite
 			    animation.addByPrefix('nnull', 'null_', 1, true);
 			    animation.addByPrefix('nmin', 'n-_', 1, true);
 			    for (i in 0...9) { // lazyness again
-				    animation.addByPrefix('n' + + Std.string(i), 'n' + Std.string(i) + '_', 1, true);
+				    animation.addByPrefix('n' + Std.string(i), 'n' + Std.string(i) + '_', 1, true);
 				}
 				setAnim('nnull');
 		}
