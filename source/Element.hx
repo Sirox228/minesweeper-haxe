@@ -7,6 +7,9 @@ import openfl.utils.Assets;
 
 class Element extends FlxSprite
 {
+	public var offsetX:Int = 0;
+	public var offsetY:Int = 0;
+
 	public function new(x:Float = 0, y:Float = 0, type:Types)
 	{
 		super(x, y);
@@ -41,6 +44,8 @@ class Element extends FlxSprite
 				setAnim('nnull');
 		}
 		setGraphicSize(Std.int(width * 4), Std.int(height * 4));
+		offsetX = Std.int(width * 4);
+		offsetY = Std.int(height * 4);
 	}
 	
 	public function setAnim(name:String) {
