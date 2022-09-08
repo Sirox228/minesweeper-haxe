@@ -91,16 +91,16 @@ class GameState extends FlxState
 				if (cell.ypos != 1 && cell.ypos - 1 == bomb.ypos && cell.xpos == bomb.xpos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != height && cell.xpos != 1 && cell.xpos - 1 == bomb.xpos && cell.ypos + 1 = bomb.ypos) {
+				if (cell.ypos != height && cell.xpos != 1 && cell.xpos - 1 == bomb.xpos && cell.ypos + 1 == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != height && cell.xpos != width && cell.xpos + 1 == bomb.xpos && cell.ypos + 1 = bomb.ypos) {
+				if (cell.ypos != height && cell.xpos != width && cell.xpos + 1 == bomb.xpos && cell.ypos + 1 == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != 1 && cell.xpos != 1 && cell.xpos - 1 == bomb.xpos && cell.ypos - 1 = bomb.ypos) {
+				if (cell.ypos != 1 && cell.xpos != 1 && cell.xpos - 1 == bomb.xpos && cell.ypos - 1 == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != 1 && cell.xpos != width && cell.xpos + 1 == bomb.xpos && cell.ypos - 1 = bomb.ypos) {
+				if (cell.ypos != 1 && cell.xpos != width && cell.xpos + 1 == bomb.xpos && cell.ypos - 1 == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
 			}
