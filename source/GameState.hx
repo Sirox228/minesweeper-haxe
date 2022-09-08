@@ -143,7 +143,7 @@ class GameState extends FlxState
 		timer3 = new Element(timer2.x - timer2.width - 10, 50, NUM);
 		add(timer3);
 		
-	    flags3 = new Element(smile.x - 100, 50, NUM);
+	    	flags3 = new Element(smile.x - 100, 50, NUM);
 		add(flags3);
 		flags2 = new Element(flags3.x + flags3.width + 10, 50, NUM);
 		add(flags2);
@@ -152,14 +152,16 @@ class GameState extends FlxState
 	}
 	
 	public function thehelloftesting() {
-		for (i in bombArray) {
-			i.setAnim('cell_mine');
-		}
-		for (i in numArray) {
-			i.setAnim('cell_' + i.num);
-		}
-		for (i in emptyArray) {
-			i.setAnim('cell_null');
+		for (i in cells.keys()) {
+			var shit = cells.get(i);
+			switch(i.type) {
+				case BOMB:
+					shit.setAnim('cell_mine');
+				case NUM:
+					shit.setAnim('cell_' + i.num);
+				case EMPTY:
+					shit.setAnim('cell_null');
+			}
 		}
 		smile.setAnim('smile_pressed');
 		timer1.setAnim('n9');
