@@ -18,9 +18,9 @@ enum CellTypes {
 }
 class GameState extends FlxState
 {
-	public var bombArray<CellInfo> = [];
-	public var numArray<CellInfo> = [];
-	public var emptyArray<CellInfo> = [];
+	public var bombArray:Array<CellInfo> = [];
+	public var numArray:Array<CellInfo> = [];
+	public var emptyArray:Array<CellInfo> = [];
 	public var cells:Map<CellInfo, Element>;
 	public var smile:Element;
 	public var timer1:Element;
