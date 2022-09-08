@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<app title="Minesweeper" file="Minesweeper" packageName="com.sirox.minesweeper" package="com.sirox.minesweeper" main="Main" version="1.0" company="sirox" />
+
+	<window width="480" height="640" fps="" background="#000000" hardware="true" vsync="false" />
+
+	<window if="desktop" orientation="portrait" fullscreen="false" resizable="true" vsync="false"/>
+
+	<window if="mobile" orientation="portrait" fullscreen="true" width="480" height="640" resizable="false" allow-shaders="true" require-shaders="true"/>
+
+	<set name="BUILD_DIR" value="export/debug" if="debug" />
+	<set name="BUILD_DIR" value="export/release" unless="debug" />
+
+	<classpath name="source" />
+	
+	<library name="game" preload="true" />
+	<assets path="assets/game" library="game" />
+	<assets path="assets/fonts" embed='true'/>
+	
+	<haxelib name="flixel" />
+	<haxelib name="flixel-addons" />
+	<haxelib name="flixel-ui" />
+	
+	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
+	<haxedef name="HXCPP_GC_BIG_BLOCKS" />
+	<haxedef name="FLX_NO_DEBUG" unless="debug" />
+	<haxedef name="HXCPP_CHECK_POINTER" />
+	<haxedef name="HXCPP_STACK_LINE" />
+
+	<icon path="icon.png" />
+</project>
