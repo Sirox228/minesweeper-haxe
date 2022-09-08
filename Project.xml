@@ -2,11 +2,11 @@
 <project>
 	<app title="Minesweeper" file="Minesweeper" packageName="com.sirox.minesweeper" package="com.sirox.minesweeper" main="Main" version="1.0" company="sirox" />
 
-	<window width="480" height="640" fps="" background="#000000" hardware="true" vsync="false" />
+	<window width="720" height="1280" fps="" background="#000000" hardware="true" vsync="false" />
 
 	<window if="desktop" orientation="portrait" fullscreen="false" resizable="true" vsync="false"/>
 
-	<window if="mobile" orientation="portrait" fullscreen="true" width="480" height="640" resizable="false" allow-shaders="true" require-shaders="true"/>
+	<window if="mobile" orientation="portrait" fullscreen="true" width="720" height="1280" resizable="false" allow-shaders="true" require-shaders="true"/>
 
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
