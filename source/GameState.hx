@@ -40,7 +40,12 @@ class GameState extends FlxState
 	// hardcoding moment
 	public function generateField(width:Int, height:Int, bombs:Int) {
 		for (i in 1...bombs) {
-			var bomb:CellInfo;
+			var bomb:CellInfo = {
+				xpos:0,
+				ypos:0,
+				num:1,
+				type:BOMB
+			}
 			bomb.type = BOMB;
 			bomb.xpos = FlxG.random.int(1, width);
 			bomb.ypos = FlxG.random.int(1, height);
@@ -56,7 +61,12 @@ class GameState extends FlxState
 		}
 		for (i in 1...width) {
 			for (j in 1...height) {
-				var cell:CellInfo;
+				var cell:CellInfo = {
+					xpos:0,
+					ypos:0,
+					num:1,
+					type:EMPTY
+				}
 				cell.type = EMPTY;
 				cell.xpos = i;
 				cell.ypos = j;
