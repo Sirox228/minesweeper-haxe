@@ -140,24 +140,24 @@ class GameState extends FlxState
 		}
 		for (i in cells.keys()) {
 			var shit = cells.get(i);
-			shit.x = shit.width * (i.xpos - 1);
-			shit.y = (shit.height * (i.ypos - 1)) + 200;
+			shit.x = shit.offsetX * (i.xpos - 1);
+			shit.y = (shit.offsetY * (i.ypos - 1)) + 200;
 		}
 		smile = new Element(Std.int(FlxG.width / 2), 50, SMILE);
 		add(smile);
 		
-		timer1 = new Element(smile.x + 100, 50, NUM);
+		timer1 = new Element(smile.x + smile.offsetX + 100, 50, NUM);
 		add(timer1);
-		timer2 = new Element(timer1.x - timer1.width - 10, 50, NUM);
+		timer2 = new Element(timer1.x - timer1.offsetX - 10, 50, NUM);
 		add(timer2);
-		timer3 = new Element(timer2.x - timer2.width - 10, 50, NUM);
+		timer3 = new Element(timer2.x - timer2.offsetX - 10, 50, NUM);
 		add(timer3);
 		
 	    	flags3 = new Element(smile.x - 100, 50, NUM);
 		add(flags3);
-		flags2 = new Element(flags3.x + flags3.width + 10, 50, NUM);
+		flags2 = new Element(flags3.x + flags3.offsetX + 10, 50, NUM);
 		add(flags2);
-		timer1 = new Element(flags2.x + flags2.width + 10, 50, NUM);
+		timer1 = new Element(flags2.x + flags2.offsetX + 10, 50, NUM);
 		add(flags1);
 	}
 	
