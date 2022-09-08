@@ -60,9 +60,9 @@ class GameState extends FlxState
 				cell.type = EMPTY;
 				cell.xpos = i;
 				cell.ypos = j;
-				var isDublicate:Bool = false
-				for (g in 0...bombArray.length) {
-					var bomb = bombArray[g];
+				var isDublicate:Bool = false;
+				for (g in bombArray) {
+					var bomb = g;
 					if (cell.xpos == bomb.xpos && cell.ypos == bomb.ypos) {
 						isDublicate = true;
 					}
