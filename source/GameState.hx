@@ -43,7 +43,7 @@ class GameState extends FlxState
 			var bomb:CellInfo = {
 				xpos:0,
 				ypos:0,
-				num:1,
+				num:0,
 				type:BOMB
 			}
 			bomb.type = BOMB;
@@ -64,7 +64,7 @@ class GameState extends FlxState
 				var cell:CellInfo = {
 					xpos:0,
 					ypos:0,
-					num:1,
+					num:0,
 					type:EMPTY
 				}
 				cell.type = EMPTY;
@@ -114,7 +114,7 @@ class GameState extends FlxState
 					cell.num = cell.num + 1;
 				}
 			}
-			if (cell.num != null && cell.num > 0) {
+			if (cell.num > 0) {
 				cell.type = NUM;
 				numArray.push(cell);
 				emptyArray.remove(cell);
