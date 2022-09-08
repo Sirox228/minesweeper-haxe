@@ -10,7 +10,7 @@ import haxe.CallStack;
 import sys.FileSystem;
 import sys.io.File;
 import flash.system.System;
-
+using StringTools;
 
 class Main extends Sprite
 {
