@@ -27,7 +27,7 @@ class Element extends FlxSprite
 			case CELL: // cell can be literally any cell, changing animations for it when pressed and etc. would be better than creating new one each time
 			    animation.addByPrefix('cell', 'cell_', 1, true);
 			    animation.addByPrefix('cell_null', 'active cell_', 1, true);
-			    for (i in 1...8) { // i'm too lazy to add all anims manually
+			    for (i in 1...9) { // i'm too lazy to add all anims manually
 				    animation.addByPrefix('cell_' + Std.string(i), 'nm' + Std.string(i) + '_', 1, true);
 			    }
 			    animation.addByPrefix('cell_flag', 'flag_', 1, true);
