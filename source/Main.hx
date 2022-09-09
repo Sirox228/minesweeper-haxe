@@ -72,22 +72,6 @@ class Main extends Sprite
 			
 			Sys.println(errMsg);
 			Application.current.window.alert(errMsg, 'Error!');
-
-			try
-			{
-				if (!FileSystem.exists('logs'))
-					FileSystem.createDirectory('logs');
-
-				File.saveContent('logs/'
-				        + Application.current.meta.get('file')
-					+ '-'
-					+ Date.now().toString().replace(' ', '-').replace(':', "'")
-					+ '.log',
-					errMsg
-					+ '\n');
-			}
-
-			System.exit(1);
 		});
 		addChild(new FlxGame(0, 0, GameState, 1, 60, 60, true));
 	}
