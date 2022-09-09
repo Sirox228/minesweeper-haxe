@@ -52,15 +52,15 @@ class GameState extends FlxState
 			for (j in bombArray) {
 			    if (j != null) {
 				    while (j.xpos == bomb.xpos && j.ypos == bomb.ypos) {
-					    bomb.xpos = FlxG.random.int(1, width);
-					    bomb.ypos = FlxG.random.int(1, height);
+					    bomb.xpos = FlxG.random.int(1, width + 1);
+					    bomb.ypos = FlxG.random.int(1, height + 1);
 					}
 				}
 			}
 			bombArray.push(bomb);
 		}
-		for (i in 1...width) {
-			for (j in 1...height) {
+		for (i in 1...width + 1) {
+			for (j in 1...height + 1) {
 				var cell:CellInfo = {
 					xpos:0,
 					ypos:0,
@@ -89,28 +89,28 @@ class GameState extends FlxState
 			for (j in bombArray) {
 				var bomb = j;
 				// the most hardcoded thing in this world
-				if (cell.xpos != width && cell.xpos + 1 == bomb.xpos && cell.ypos == bomb.ypos) {
+				if (cell.xpos + 1 == bomb.xpos && cell.ypos == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.xpos != 1 && cell.xpos - 1 == bomb.xpos && cell.ypos == bomb.ypos) {
+				if (cell.xpos - 1 == bomb.xpos && cell.ypos == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != height && cell.ypos + 1 == bomb.ypos && cell.xpos == bomb.xpos) {
+				if (cell.ypos + 1 == bomb.ypos && cell.xpos == bomb.xpos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != 1 && cell.ypos - 1 == bomb.ypos && cell.xpos == bomb.xpos) {
+				if (cell.ypos - 1 == bomb.ypos && cell.xpos == bomb.xpos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != height && cell.xpos != 1 && cell.xpos - 1 == bomb.xpos && cell.ypos + 1 == bomb.ypos) {
+				if (cell.xpos - 1 == bomb.xpos && cell.ypos + 1 == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != height && cell.xpos != width && cell.xpos + 1 == bomb.xpos && cell.ypos + 1 == bomb.ypos) {
+				if (cell.xpos + 1 == bomb.xpos && cell.ypos + 1 == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != 1 && cell.xpos != 1 && cell.xpos - 1 == bomb.xpos && cell.ypos - 1 == bomb.ypos) {
+				if (cell.xpos - 1 == bomb.xpos && cell.ypos - 1 == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
-				if (cell.ypos != 1 && cell.xpos != width && cell.xpos + 1 == bomb.xpos && cell.ypos - 1 == bomb.ypos) {
+				if (cell.xpos + 1 == bomb.xpos && cell.ypos - 1 == bomb.ypos) {
 					cell.num = cell.num + 1;
 				}
 			}
@@ -140,24 +140,24 @@ class GameState extends FlxState
 		}
 		for (i in cells.keys()) {
 			var shit = cells.get(i);
-			shit.x = shit.offsetX * (i.xpos - 1);
-			shit.y = (shit.offsetY * (i.ypos - 1)) + 200;
+			shit.x = shit.offsetX * (i.xpos - 1) + 155;
+			shit.y = ((shit.width * 4) * (i.ypos - 1)) + 200;
 		}
 		smile = new Element(Std.int(FlxG.width / 2), 50, SMILE);
 		add(smile);
 		
-		timer1 = new Element(smile.x + smile.offsetX + 100, 50, NUM);
+		timer1 = new Element(smile.x + smile.offsetX + 170, 50, NUM);
 		add(timer1);
 		timer2 = new Element(timer1.x - timer1.offsetX - 10, 50, NUM);
 		add(timer2);
 		timer3 = new Element(timer2.x - timer2.offsetX - 10, 50, NUM);
 		add(timer3);
 		
-	    	flags3 = new Element(smile.x - 100, 50, NUM);
+	    flags3 = new Element(smile.x - 200, 50, NUM);
 		add(flags3);
 		flags2 = new Element(flags3.x + flags3.offsetX + 10, 50, NUM);
 		add(flags2);
-		timer1 = new Element(flags2.x + flags2.offsetX + 10, 50, NUM);
+		flags1 = new Element(flags2.x + flags2.offsetX + 10, 50, NUM);
 		add(flags1);
 	}
 	

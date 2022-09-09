@@ -2,7 +2,7 @@
 <project>
 	<app title="Minesweeper" file="Minesweeper" packageName="com.sirox.minesweeper" package="com.sirox.minesweeper" main="Main" version="1.0" company="sirox" />
 
-	<window width="720" height="1280" fps="" background="#000000" hardware="true" vsync="false" />
+	<window width="720" height="720" fps="" background="#000000" hardware="true" vsync="false" />
 
 	<window if="desktop" orientation="portrait" fullscreen="false" resizable="true" vsync="false"/>
 
