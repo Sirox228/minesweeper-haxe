@@ -44,7 +44,7 @@ class Element extends FlxSprite
 				setAnim('nnull');
 		}
 		offsetX = Std.int(width * 4);
-		offsetY = type == NUM ? Std.int(height * 4) : height;
+		offsetY = type == NUM ? Std.int(height * 4) : Std.int(height);
                 if (type == NUM) {
 		        setGraphicSize(Std.int(width * 4), Std.int(height * 4));
                 } else {
