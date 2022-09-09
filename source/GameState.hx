@@ -47,8 +47,8 @@ class GameState extends FlxState
 				type:BOMB
 			}
 			bomb.type = BOMB;
-			bomb.xpos = FlxG.random.int(1, width);
-			bomb.ypos = FlxG.random.int(1, height);
+			bomb.xpos = FlxG.random.int(1, width + 1);
+			bomb.ypos = FlxG.random.int(1, height + 1);
 			for (j in bombArray) {
 			    if (j != null) {
 				    while (j.xpos == bomb.xpos && j.ypos == bomb.ypos) {
