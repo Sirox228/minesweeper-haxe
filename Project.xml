@@ -9,7 +9,7 @@
 	<window if="mobile" orientation="portrait" fullscreen="true" width="720" height="1280" resizable="false" allow-shaders="true" require-shaders="true"/>
 
 	<set name="BUILD_DIR" value="export/debug" if="debug" unless="32bits" />
-	<set name="BUILD_DIR" value="export/release" unless="debug" unless="32bits" />
+	<set name="BUILD_DIR" value="export/release" unless="debug || 32bits" />
         <set name="BUILD_DIR" value="export/32bit" if="32bits" />
 
 	<classpath name="source" />
