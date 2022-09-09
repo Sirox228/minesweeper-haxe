@@ -44,8 +44,12 @@ class Element extends FlxSprite
 				setAnim('nnull');
 		}
 		offsetX = Std.int(width * 4);
-		offsetY = Std.int(height * 4);
-		setGraphicSize(Std.int(width * 4), Std.int(height * 4));
+		offsetY = type == NUM ? Std.int(height * 4) : height;
+                if (type == NUM) {
+		        setGraphicSize(Std.int(width * 4), Std.int(height * 4));
+                } else {
+                        setGraphicSize(Std.int(width * 4));
+                }
 	}
 	
 	public function setAnim(name:String) {
