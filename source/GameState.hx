@@ -84,7 +84,36 @@ class GameState extends FlxState
 				}
 			}
 		}
-		for (i in emptyArray) {
+
+		for (bombCell in bombArray)
+		{
+			for (y in bombCell.ypos - 1...bombCell.ypos + 2)
+			{
+				for (x in bombCell.xpos - 1...bombCell.xpos + 2)
+				{
+					var cell = getCellFromPos(numArray, x, y);
+
+					if (cell != null)
+					{
+						cell.num += 1;
+					}
+
+					if (cell == null)
+					{
+						cell = getCellFromPos(emptyArray, x, y);
+						if (cell != null)
+						{
+							cell.num += 1;
+							cell.type = NUM;
+							numArray.push(cell);
+							emptyArray.remove(cell);
+						}
+					}
+				}
+			}
+		}
+
+		/*for (i in emptyArray) {
 			var cell = i;
 			for (j in bombArray) {
 				var bomb = j;
@@ -119,7 +148,22 @@ class GameState extends FlxState
 				numArray.push(cell);
 				emptyArray.remove(cell);
 			}
+		}*/
+	}
+
+	function getCellFromPos(theArray:Array<CellInfo>, xpos:Int, ypos:Int):CellInfo {
+		var cell:CellInfo = null;
+
+		for (arrCell in theArray)
+		{
+			if ( arrCell.xpos == xpos && arrCell.ypos == ypos )
+			{
+				cell = arrCell;
+				break;
+			}
 		}
+
+		return cell;
 	}
 	
 	public function createGraphic(width:Int, height:Int) {
