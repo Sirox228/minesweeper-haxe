@@ -52,8 +52,8 @@ class GameState extends FlxState
 			for (j in bombArray) {
 			    if (j != null) {
 				    while (j.xpos == bomb.xpos && j.ypos == bomb.ypos) {
-					    bomb.xpos = FlxG.random.int(1, width + 1);
-					    bomb.ypos = FlxG.random.int(1, height + 1);
+					    bomb.xpos = FlxG.random.int(1, width);
+					    bomb.ypos = FlxG.random.int(1, height);
 					}
 				}
 			}
