@@ -39,7 +39,7 @@ class GameState extends FlxState
 	
 	// hardcoding moment
 	public function generateField(width:Int, height:Int, bombs:Int) {
-		for (i in 1...bombs) {
+		for (i in 1...bombs + 1) {
 			var bomb:CellInfo = {
 				xpos:0,
 				ypos:0,
